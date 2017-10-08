@@ -50,4 +50,25 @@ putReview
 		Nil
 	productPage
 		click on review and write a review about the product after selecting the attribute 
-		 		
+	
+Implementation details	 		
+	indexPage
+		username,password for fb api
+		get their location
+	productListPage
+		listview for products
+	productPage
+		listview for reviews
+		html-for reviews
+		js-file for requesting reviews and display
+		write button to give reviews
+		select attribute
+		textbox for reviews
+		create a tab for review considerations
+		select and display only the reviews of fb friends that matches
+		select and display the reviews those location matches
+		show reviews of the attributes
+		select reviews of the good/bad						
+
+
+	
