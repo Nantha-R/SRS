@@ -1,0 +1,53 @@
+display comments of fb friends
+location wise display comments
+based on attributes
+display comments that are good ,bad 
+
+General
+	indexPage
+		login for users
+	productlistPage
+		displays the list of products which are reviewed
+	productPage
+		display the revies of the product
+
+Fb friends
+	indexPage
+		login using facebook api
+	productlistPage
+		Nil
+	productPage
+		reviews that belong to the friends
+
+location
+	indexPage
+		get Location of the user from his facebook id
+	productlistPage
+		Nil
+	productPage
+		displays the reviews that are from the same location 
+
+attributes
+	indexPage
+		Nil
+	productListPage
+		Nil
+	productPage
+		select an attribute and show the reviews based on it
+
+good/bad
+	indexPage
+		Nil
+	productListPage
+		Nil
+	productPage
+		select the comments that are good/bad
+
+putReview
+	indexPage
+		Nil
+	productListPage
+		Nil
+	productPage
+		click on review and write a review about the product after selecting the attribute 
+		 		
