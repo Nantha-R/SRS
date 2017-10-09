@@ -1,0 +1,113 @@
+<html>
+    <head>
+        <title>Intruduction</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>    
+        <link rel="stylesheet" href="cssFiles/indexCss.css">
+        <script src="jqueryFiles/loginForm.js"></script>
+    </head>
+    <body>
+        <div class="">
+        <div class="row">
+            <div class="col-lg-12">
+        <div class="jumbotron" id="jumpotron">
+            
+            <p><h1 style="color:white;padding-left:50px;">Social Recommender Systems  </h1></p>
+            <p style="color:white;"><h3 style="padding-left:50px;">AN APPROACH FOR BUILDING EFFICIENT SOCIAL RECOMMENDER SYSTEM USING INDIVIDUAL RELATIONSHIP NETWORKS WITH SOCIAL SENTIMENTAL ANALYSIS</h3></p>
+            
+        </div>
+        </div>
+        </div>
+        </div>
+        
+        
+        <ul class="uses">
+            <li><a data-toggle="collapse" href="#list1">Natural language processing-sentimental analysis</a></li>  
+            <div id="list1" class="collapse in"><p>The problems like sparse datasets and cold start can be minimized by using sentimental analysis on reviews for recommendation.
+            With the inclusion of sentimental analysis to SRS the user will have the option of either viewing the positive reviews like "This product works well" or negative reviews like "I hate this product's functionality".
+            This helps the user in getting a better understanding of the object in situations like cold start and in situations where sparse and unbalanced datasets are given.</p>
+            <p>The user's reviews are analyzed using Social sentimental analysis (Algorithm of NLP) and transformed into datasets in the range of -1 to +1 similar to fuzzy sets. Values from 0 to +1 represents positive reviews while values form 0 to -1 represents negative reviews.
+            The user on choosing positive reviews will get to see only the reviews that have a value of 0 to +1 and wise versa in the case of negative comments.</p>
+            </div>
+            
+            <li><a data-toggle="collapse" href="#list2">Natural language processing-graph search</a></li>
+            <div id="list2" class="collapse in">
+                <p>
+                    This section shows the process of generating an individual relationship network (IRN) for each user by expanding and contracting the relationship networks of users.
+                    The IRN represents the set of user's friends who are on social media in the form of graphs and nodes.
+                    In this study, S = (V;E) is a directed graph, where V is the set of nodes that correspond to users, and E is the set of edges that connect users.
+                    This can be done effectively using Facebook Graph API.
+                </p>
+                <p>
+                    It was designed to give answers to user natural language queries rather than a list of links.
+                    The Facebook Graph API combined the big data acquired from its over one billion users and external data into a search engine providing user-specific search results like finding the IRN of a particular person.
+                    These result sets can be useful in displaying reviews that are made by our Facebook friends.
+                </p>
+                <p>
+                    The recommendation datasets present are first analyzed with the set of Facebook friends generated.
+                    The datasets (reviews) which matches the above comparison are displayed to the end user.
+                </p>
+            </div>
+            
+            <li><a data-toggle="collapse" href="#list3">Attribute based prioritization</a></li>
+            <div id="list3" class="collapse in">
+                <p>
+                    The major problem with the existing SRS is that the people who are friends in social media may or may not be similar in choice.
+                    This can be minimized by introducing an attribute driven querying algorithm for representing reviews.
+                </p>
+                <p>
+                    The user (reviewer) upon reviewing is provided with the rating system which comprises of set of attributes that describes the object clearly.
+                    The user who wants to search for an Object (for eg. Hotel) with a particular characteristics (like cleanliness) will get results prioritized based on the rating given by users for the attribute "cleanliness".
+                </p>
+            </div>
+            
+            <li><a data-toggle="collapse" href="#list4">Location based prioritization</a></li>
+            <div id="list4" class="collapse in">
+                <p>
+                    The dissimilarity that exists among users in the social media can also be minimized by means of location of users.
+                    The users belonging to the same locality more or less have the same taste for an object. This can be done by means of segregating reviews and ratings of users(reviewers) while storing data onto various tables based on their geographical location.
+                    A person's comment gets stored in a table names "Chennai" if he resides in Chennai.
+                    This results in better optimization of results upon querying results.
+                </p>
+            </div>
+            
+        </ul>
+        
+        
+        <br><br><br>
+        <div class="row" style="margin-bottom: 20px">
+            <div class="col-md-6">
+        <div class="">
+            <img id="loginButton" src="imagesFiles/facebook-logo_0.png" width=100px style="margin-left:100px"/>
+            <span style="margin-left:5px">Login using facebook</span>
+            
+        </div>
+        </div>
+        </div>
+        
+        
+        
+        <div class="loginform">
+            <form name="login" action="phpFiles/loginForm.php" method="post">
+                <table class="tableContent">
+                    <th colspan=2>SRS-LOGIN</th>
+                    <tr>
+                        <td>PROFILE NAME </td>
+                        <td><input type="text" name="fbid" value=""></td>
+                    </tr>
+                    <tr>
+                        <td>PASSWORD</td>
+                        <td><input type="password" name="password" value=""></td>
+                    </tr>
+                    <tr>
+                        
+                        <td colspan=2><div class="submit1"><input type="submit" value="submit" class="btn btn-success" id="submitButton"/></div></td>
+                        
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </body>
+</html>

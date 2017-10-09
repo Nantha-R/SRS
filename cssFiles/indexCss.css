@@ -1,0 +1,62 @@
+#jumpotron
+{
+    background-color:DodgerBlue;
+}
+
+.uses
+{
+    padding-left: 2cm;
+    font-size: 30px;
+}
+
+.uses #list1,#list2,#list3,#list4
+{
+    font-size: 20px;
+}
+
+.fblogin
+{
+    font-size:30px;    
+}
+.loginform
+{
+    display: none;
+    position: fixed;
+    z-index: 1; 
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+}
+table{
+    background-color: Gray;
+    padding: 20px;
+    
+}
+tr td
+{
+    width:50%;
+    
+    text-align: left;
+    padding: 20px;
+    
+}
+
+th{
+    padding: 20px;
+    text-align: center;
+    font-size: 30px;
+    color: DodgerBlue;
+}
+.submit1{
+    text-align: center;
+}
+.submit
+{
+    position: absolute;
+    top: 50%;
+}
+
+#submitButton{
+    
+}
