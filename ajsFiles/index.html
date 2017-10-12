@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <title>Intruduction</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>    
+        <link rel="stylesheet" href="cssFiles/indexCss.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    
+    </head>
+    <body>
+        <div class="myApp">
+        <div class="row">
+            <div class="col-lg-12">
+        <div class="jumbotron" id="jumpotron">
+            
+            <p><h1 style="color:white;padding-left:50px;">Social Recommender Systems  </h1></p>
+            <p style="color:white;"><h3 style="padding-left:50px;">AN APPROACH FOR BUILDING EFFICIENT SOCIAL RECOMMENDER SYSTEM USING INDIVIDUAL RELATIONSHIP NETWORKS WITH SOCIAL SENTIMENTAL ANALYSIS</h3></p>
+            
+        </div>
+        </div>
+        </div>
+        </div>
+        
+        <div ng-app="myApp" ng-controller="fetchData">
+        
+        <ul class="uses">
+            <li><a data-toggle="collapse" href="#list1">Natural language processing-sentimental analysis</a></li>  
+            <div id="list1" class="collapse in"><p>The problems like sparse datasets and cold start can be minimized by using sentimental analysis on reviews for recommendation.
+            With the inclusion of sentimental analysis to SRS the user will have the option of either viewing the positive reviews like "This product works well" or negative reviews like "I hate this product's functionality".
+            This helps the user in getting a better understanding of the object in situations like cold start and in situations where sparse and unbalanced datasets are given.</p>
+            <p ng-bind="hello"></p>
+            </div>
+            
+           
+            
+        </ul>
+        </div>
+        <script src="C:\xampp\htdocs\SRS\ajsFiles\fetchData.js"></script>
+        <br><br><br>
+        <div class="row" style="margin-bottom: 20px">
+            <div class="col-md-6">
+        <div class="">
+            <a href="fbFiles/index.php">
+            <img id="loginButton" src="imagesFiles/facebook-logo_0.png" width=100px style="margin-left:100px"/>
+            </a>
+            <span style="margin-left:5px">Login using facebook</span>
+            
+        </div>
+        </div>
+        </div>
+        
+        
+        
+        
+    </body>
+</html>

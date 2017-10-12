@@ -1,0 +1,10 @@
+index.html
+
+displays the basic features of the app
+link to fb login page
+
+productPage
+
+lists all the products that are reviewed
+
+

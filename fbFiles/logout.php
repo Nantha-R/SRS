@@ -7,7 +7,8 @@ unset($_SESSION['facebook_access_token']);
 
 // Remove user data from session
 unset($_SESSION['userData']);
+unset($_SESSION['friend_list']);
 
 // Redirect to the homepage
-header("Location:index.php");
+header('Location: http://localhost:8080/SRS/index.html');
 ?>

@@ -1,0 +1,3 @@
+indexCss.css
+
+provides css designs to index.html page

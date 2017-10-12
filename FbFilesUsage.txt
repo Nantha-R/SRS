@@ -1,0 +1,15 @@
+fbConfig
+
+contains app id details
+
+index
+
+contains all the details collection features
+
+logout
+
+clear out all session variables and logout from fb
+
+User
+
+store user details onto db

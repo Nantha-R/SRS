@@ -65,54 +65,54 @@ if(isset($accessToken)){
 			$friendsArray = $friends->asArray();
 			$allFriends = array_merge($friendsArray, $allFriends);
 		}
-		foreach ($allFriends as $key) {
-			echo $key['name'] . "<br>";
-		}
-		echo count($allFriends);
+		//printing friend list
+		//foreach ($allFriends as $key) {
+		//	echo $key['name'] . "<br>";
+		//}
+		
+		
 	} else {
 		$allFriends = $friends->asArray();
 		$totalFriends = count($allFriends);
-		foreach ($allFriends as $key) {
-			echo $key['name'] . "<br>";
-		}}
+		//printing friend list
+		//foreach ($allFriends as $key) {
+		//	echo $key['name'] . "<br>";
+		//}
+		}
     // Initialize User class
     $user = new User();
     
     // Insert or update user data to the database
     $fbUserData = array(
-        'oauth_provider'=> 'facebook',
+		'oauth_provider'=> 'facebook',
         'oauth_uid'     => $fbUserProfile['id'],
         'first_name'    => $fbUserProfile['first_name'],
         'last_name'     => $fbUserProfile['last_name'],
-        'email'         => $fbUserProfile['email'],
+        //'email'         => $fbUserProfile['email'],
         'gender'        => $fbUserProfile['gender'],
         'locale'        => $fbUserProfile['locale'],
         'picture'       => $fbUserProfile['picture']['url'],
         'link'          => $fbUserProfile['link']
     );
+	
+	//check if the user's email id is available or not
+	if(array_key_exists('email',$fbUserProfile))
+	$fbUserData['email']=$fbUserProfile['email'];
+	else
+	$fbUserData['email']="Undefined";
+	
     $userData = $user->checkUser($fbUserData);
     
-    // Put user data into session
+    // Put user data and friend list  into session
     $_SESSION['userData'] = $userData;
+	$_SESSION['allFriends']=$allFriends;
     
-    // Get logout url
-    $logoutURL = $helper->getLogoutUrl($accessToken, 'logout.php');
-    
-    // Render facebook profile data
-    if(!empty($userData)){
-        $output  = '<h1>Facebook Profile Details </h1>';
-        $output .= '<img src="'.$userData['picture'].'">';
-        $output .= '<br/>Facebook ID : ' . $userData['oauth_uid'];
-        $output .= '<br/>Name : ' . $userData['first_name'].' '.$userData['last_name'];
-        $output .= '<br/>Email : ' . $userData['email'];
-        $output .= '<br/>Gender : ' . $userData['gender'];
-        $output .= '<br/>Locale : ' . $userData['locale'];
-        $output .= '<br/>Logged in with : Facebook';
-        $output .= '<br/><a href="'.$userData['link'].'" target="_blank">Click to Visit Facebook Page</a>';
-        $output .= '<br/>Logout from <a href="'.$logoutURL.'">Facebook</a>'; 
-    }else{
-        $output = '<h3 style="color:red">Some problem occurred, please try again.</h3>';
-    }
+    // Get logout url and store in session
+    $logoutURL = $helper->getLogoutUrl($accessToken, 'http://localhost:8080/SRS/fbFiles/logout.php');
+    $_SESSION['logoutURL']=$logoutURL;
+	
+    // Move to the products Page
+	header('Location: http://localhost:8080/SRS/productPage.php');
     
 }else{
     // Get login url
@@ -120,7 +120,7 @@ if(isset($accessToken)){
     $loginURL = $helper->getLoginUrl($redirectURL, $fbPermissions);
     
     // Render facebook login button
-    $output = '<a href="'.htmlspecialchars($loginURL).'"><img src="fb.png"></a>';
+	header('Location:'.$loginURL);
 }
 ?>
 <html>
