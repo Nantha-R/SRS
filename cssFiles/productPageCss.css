@@ -1,0 +1,23 @@
+#jumpotron
+{
+    background-color:DodgerBlue;
+}
+img{
+    float: left;
+}
+.names
+{
+    font-family: "Times New Roman";
+    margin-left: 15%;
+    letter-spacing: 3px;
+    color: black;
+    font-weight: bold;
+    
+}
+.describe
+{
+    color: white;
+    font-family: "Times New Roman";
+    margin-left:15%;
+    letter-spacing: 1px;
+}

@@ -1,3 +1,7 @@
 indexCss.css
 
 provides css designs to index.html page
+
+productPageCss.css
+
+provides css designs to productPage.html page

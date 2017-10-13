@@ -7,4 +7,8 @@ productPage
 
 lists all the products that are reviewed
 
+productList
+
+list down all the reviews of the selected product
+
 
