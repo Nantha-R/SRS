@@ -19,7 +19,19 @@
             
             <p><h1 style="color:white;padding-left:50px;">Social Recommender Systems  </h1></p>
             <p style="color:white;"><h3 style="padding-left:50px;">AN APPROACH FOR BUILDING EFFICIENT SOCIAL RECOMMENDER SYSTEM USING INDIVIDUAL RELATIONSHIP NETWORKS WITH SOCIAL SENTIMENTAL ANALYSIS</h3></p>
+            
+            
+            <div class="col-lg-7"></div>
+            <div class="col-lg-2" style="font-size:25px">
+                Latitude:<?php echo $_SESSION['latitude'];?>
+            </div>
+            <div class="col-lg-2" style="font-size: 25px">
+                Longitude:<?php echo $_SESSION['longitude'];?>
+            </div>
+            <div class="col-lg-1"><a href="fbFiles/logout.php"><button type="button" class="btn btn-default">LOGOUT</button></a></div>
+            </div>
         </div>
+        
         <br><br>
         <div class="container-fluid">
         <div class="row">

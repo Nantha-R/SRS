@@ -5,8 +5,8 @@ if(!navigator.geolocation){
 }
 navigator.geolocation.getCurrentPosition(success, error);
 function success(position){
-	var latitude  = position.coords.latitude;	
-	var longitude = position.coords.longitude;
+	var latitude  = (position.coords.latitude).toFixed(2);	
+	var longitude = (position.coords.longitude).toFixed(2);
 	var url="http://localhost:8080/SRS/fbFiles/index.php?latitude="+latitude+"&longitude="+longitude;
 	window.open(url,"_self");
 

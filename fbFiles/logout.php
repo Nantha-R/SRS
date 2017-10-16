@@ -9,6 +9,10 @@ unset($_SESSION['facebook_access_token']);
 unset($_SESSION['userData']);
 unset($_SESSION['friend_list']);
 
+//remove latitude and longitude
+unset($_SESSION['latitude']);
+unset($_SESSION['longitude']);
+
 // Redirect to the homepage
 header('Location: http://localhost:8080/SRS/index.html');
 ?>
