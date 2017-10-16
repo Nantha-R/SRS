@@ -13,6 +13,8 @@
         if(!isset($_SESSION['userData']))
         header('Location: index.html');
         ?>
+        
+        
         <div class="jumbotron" id="jumpotron">
             
             <p><h1 style="color:white;padding-left:50px;">Social Recommender Systems  </h1></p>

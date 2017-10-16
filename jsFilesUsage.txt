@@ -1,0 +1,4 @@
+getLocation.js
+
+get user latitude and longitude
+combined with index.html

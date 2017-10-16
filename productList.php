@@ -11,6 +11,8 @@
     $_SESSION['collegeName']=$_GET['collegeName'];
     else
     header('Location : index.html');
+    echo $_SESSION['latitude'];
+    echo $_SESSION['longitude'];
 ?>
 <html>
     <head>

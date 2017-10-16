@@ -2,7 +2,9 @@
 // Include FB config file && User class
 require_once 'fbConfig.php';
 require_once 'User.php';
-
+session_start();
+$_SESSION['latitude']=$_GET['latitude'];
+$_SESSION['longitude']=$_GET['longitude'];
 if(isset($accessToken)){
     
     if(isset($_SESSION['facebook_access_token'])){
