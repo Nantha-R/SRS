@@ -2,3 +2,8 @@ getLocation.js
 
 get user latitude and longitude
 combined with index.html
+
+js.js
+
+connects to db.php file and gets values from the db
+links these values onto productList.php

@@ -1,0 +1,4 @@
+db.php
+
+get values from database
+invoked by js.js file
