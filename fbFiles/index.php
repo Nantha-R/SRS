@@ -77,9 +77,7 @@ if(isset($accessToken)){
 		$allFriends = $friends->asArray();
 		$totalFriends = count($allFriends);
 		//printing friend list
-		//foreach ($allFriends as $key) {
-		//	echo $key['name'] . "<br>";
-		//}
+		
 		}
     // Initialize User class
     $user = new User();
@@ -107,7 +105,12 @@ if(isset($accessToken)){
     
     // Put user data and friend list  into session
     $_SESSION['userData'] = $userData;
-	$_SESSION['allFriends']=$allFriends;
+	$tempar=array();
+	foreach ($allFriends as $key) {
+			array_push($tempar,$key['name']);
+	}
+	//storing friends list onto section
+	$_SESSION['allFriends']=$tempar;
     
     // Get logout url and store in session
     $logoutURL = $helper->getLogoutUrl($accessToken, 'http://localhost:8080/SRS/fbFiles/logout.php');

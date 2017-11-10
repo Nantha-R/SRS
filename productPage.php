@@ -38,7 +38,7 @@
             <div class="col-lg-1"></div>
             <div class="col-lg-10" style="background-color:grey">
                 <img src="imagesFiles/sjce.jpg" style="width: 140px;height: 140px">
-                <a href="productList.php?collegeName=sjce"><h1 class="names">SJCE</h1></a>
+                <a href="productList.php?collegeName=sjce&customizedValue=0&attribute=none"><h1 class="names">SJCE</h1></a>
                 <h6 class="describe">AN APPROACH FOR BUILDING EFFICIENT SOCIAL RECOMMENDER SYSTEM USING INDIVIDUAL RELATIONSHIP NETWORKS WITH SOCIAL SENTIMENTAL ANALYSIS</h6>
             </div>
             <div class="col-lg-1"></div>
@@ -49,7 +49,7 @@
             <div class="col-lg-1" ></div>
             <div class="col-lg-10" style="background-color:grey">
                 <img src="imagesFiles/jeppiar.png" style="width: 140px;height:140px">
-                <a href="productList.php?collegeName=jeppiar"><h1 class="names">JEPPIAR</h1></a>
+                <a href="productList.php?collegeName=jeppiar&customizedValue=0&attribute=none"><h1 class="names">JEPPIAR</h1></a>
                 <h6 class="describe">AN APPROACH FOR BUILDING EFFICIENT SOCIAL RECOMMENDER SYSTEM USING INDIVIDUAL RELATIONSHIP NETWORKS WITH SOCIAL SENTIMENTAL ANALYSIS</h6>
             </div>
             <div class="col-lg-1"></div>
@@ -59,7 +59,7 @@
             <div class="col-lg-1"></div>
             <div class="col-lg-10" style="background-color:grey">
                 <img src="imagesFiles/sathyabama.jpg" style="width: 140px;height:140px">
-                <a href="productList.php?collegeName=sathyabama"><h1 class="names">SATHYABAMA</h1></a>
+                <a href="productList.php?collegeName=sathyabama&customizedValue=0&attribute=none"><h1 class="names">SATHYABAMA</h1></a>
                 <h6 class="describe">AN APPROACH FOR BUILDING EFFICIENT SOCIAL RECOMMENDER SYSTEM USING INDIVIDUAL RELATIONSHIP NETWORKS WITH SOCIAL SENTIMENTAL ANALYSIS</h6>
             </div>
             <div class="col-lg-1"></div>
