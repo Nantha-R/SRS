@@ -11,5 +11,6 @@ productList
 
 list down all the reviews of the selected product
 angularjs application enabled
+connects with db.php for location,attribute,nlp and fbfriends reviews collection
 
 
