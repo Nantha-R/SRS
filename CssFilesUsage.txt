@@ -1,4 +1,4 @@
-1.indexCss.css
+1..indexCss.css
 
 provides css designs to index.html page
 
