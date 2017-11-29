@@ -3,3 +3,7 @@ db.php
 contains different functions for carrying out specific tasks
 get values from database
 invoked by js.js file
+
+addReview.php
+
+used for inserting the review into the database
