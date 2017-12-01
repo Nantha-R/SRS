@@ -11,6 +11,8 @@
     $attributeArray=array("Sports","Discipline","Studies","Food","Transport","none");
     if(in_array($_GET['collegeName'],$colleges)&&in_array($_GET['customizedValue'],$custArrays)&&in_array($_GET['attribute'],$attributeArray))
     {
+    $tempCollege=$_GET['collegeName'];
+    if($tempCollege!="alreadyGot")
     $_SESSION['collegeName']=$_GET['collegeName'];
     $_SESSION['customizedValue']=$_GET['customizedValue'];
     $_SESSION['attributeValue']=$_GET['attribute'];
@@ -24,6 +26,7 @@
         <title>ProductList</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://algorithmia.com/v1/clients/js/algorithmia-0.2.0.js" type="text/javascript"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="cssFiles/productListCss.css">

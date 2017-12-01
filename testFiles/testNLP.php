@@ -16,7 +16,7 @@
         .pipe(input)
         .then(function(output) {
           console.log(output);
-          document.write(output.result[0].sentiment); 
+          document.write(output.result[0].sentiment);
         });
 
 

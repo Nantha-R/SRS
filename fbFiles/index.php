@@ -1,10 +1,10 @@
 <?php
 // Include FB config file && User class
+session_start();
+$_SESSION['longitude']=$_GET['longitude'];
+$_SESSION['latitude']=$_GET['latitude'];
 require_once 'fbConfig.php';
 require_once 'User.php';
-session_start();
-$_SESSION['latitude']=$_GET['latitude'];
-$_SESSION['longitude']=$_GET['longitude'];
 if(isset($accessToken)){
 
     if(isset($_SESSION['facebook_access_token'])){
@@ -105,6 +105,7 @@ if(isset($accessToken)){
 
     // Put user data and friend list  into session
     $_SESSION['userData'] = $userData['first_name']." ".$userData['last_name'];
+
 	$tempar=array();
 	foreach ($allFriends as $key) {
 			array_push($tempar,$key['name']);
