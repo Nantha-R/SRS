@@ -2,3 +2,8 @@
 {
     background-color:DodgerBlue;
 }
+#formStatus
+{
+  color: red;
+  text-transform: capitalize;
+}

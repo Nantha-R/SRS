@@ -114,14 +114,24 @@
                 <option value="Discipline">Discipline</option>
                 <option value="Food">Food</option>
               </select><br><br>
+
               <textarea name="body" rows="8" cols="80" ng-model="review" required></textarea><br>
+
               <input type="reset" name="" value="Clear" style="margin-left:38%">
+
               <input type="submit" name="" value="submit">
-              <div>
-                review form is {{reviewForm.$valid}}
-                {{spice}}
+
+              <div ng-show="beforeFormSubmission">
+                <br>
+                Submit the review only when review form is valid !!!<br><br>
+                SUBMIT STATUS : <span id="formStatus">{{reviewForm.$valid}}</span>
+              </div>
+              <div ng-show="afterFormSubmission">
+                {{note}}
               </div>
             </form>
+            <!--for visibility-->
+            <br><br>
           </div>
           <div class="col-lg-1"></div>
           </div>

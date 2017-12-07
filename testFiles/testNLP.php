@@ -7,13 +7,13 @@
   </head>
   <body>
     <script>
+    var input1="I really like Algorithmia!";
 
-    var input = {
-      "document": "I really like Algorithmia!"
-    };
+    var ip={};
+    ip['document']=input1;
     Algorithmia.client("simeqY772qhzCQkDtET++EUGeQv1")
         .algo("nlp/SentimentAnalysis/1.0.4")
-        .pipe(input)
+        .pipe(ip)
         .then(function(output) {
           console.log(output);
           document.write(output.result[0].sentiment);

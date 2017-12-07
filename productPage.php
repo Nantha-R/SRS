@@ -10,7 +10,6 @@
     <body>
         <?php
         session_start();
-        echo $_SESSION['latitude'];
         if(!isset($_SESSION['userData']))
         header('Location: index.html');
         ?>
