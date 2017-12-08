@@ -5,7 +5,8 @@ contains app id details
 index
 
 contains all the details collection features
-collects friend list and location
+collects friend list
+store location onto templocation db
 collect fbid
 
 logout
@@ -15,3 +16,4 @@ clear out all session variables and logout from fb
 User
 
 store user details onto db
+delete records from templocation db

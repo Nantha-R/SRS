@@ -6,9 +6,10 @@ link to fb login page
 productPage
 
 lists all the products that are reviewed
+get location from db and display it
 
 productList
 
 list down all the reviews of the selected product
-angularjs application enabled connect with myApp.js to include angularjs functionality 
+angularjs application enabled connect with myApp.js to include angularjs functionality
 connects with db.php for location,attribute,nlp and fbfriends reviews collection

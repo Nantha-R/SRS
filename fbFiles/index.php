@@ -3,6 +3,20 @@
 session_start();
 $_SESSION['longitude']=$_GET['longitude'];
 $_SESSION['latitude']=$_GET['latitude'];
+
+//save latitude and longitude
+$dbHost     = "localhost";
+$dbUsername = "root";
+$dbPassword = "";
+$dbName     = "srs";
+$userTbl    = 'templocation';
+
+//make connection
+$conn = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
+//enter records
+$query = "INSERT INTO ".$userTbl." SET latitude = '".$_SESSION['latitude']."', longitude = '".$_SESSION['longitude']."'";
+$result = $conn->query($query);
+
 require_once 'fbConfig.php';
 require_once 'User.php';
 if(isset($accessToken)){

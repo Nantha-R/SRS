@@ -24,6 +24,12 @@
             <div class="col-lg-7"></div>
             <div class="col-lg-2" style="font-size:25px">
                 Latitude:<?php
+                $conn = new mysqli("localhost", "root", "", "srs");
+                $query="select latitude,longitude from users";
+                $result=$conn->query($query);
+                $record=$result->fetch_assoc();
+                $_SESSION['latitude']=$record['latitude'];
+                $_SESSION['longitude']=$record['longitude'];
                 echo $_SESSION['latitude'];
                 ?>
             </div>
