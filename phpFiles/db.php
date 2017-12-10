@@ -18,16 +18,18 @@ function getFBResults()
 function getLocationResults()
 {
     global $conn,$sqlQuery;
-    $val1=$_SESSION['latitude']+2;
-    $val2=$val1-4;
-    $val3=$_SESSION['longitude']+4;
-    $val4=$val3-8;
-    $sqlQuery="SELECT * FROM reviews where latitude BETWEEN ".$val2." AND ".$val1." AND longitude BETWEEN ".$val4." AND ".$val3;
+    $latitude=floor($_SESSION['latitude']);
+    $longitude=floor($_SESSION['longitude']);
+    $query="select Name from districts where latitude=".$latitude." AND longitude=".$longitude;
+    $districtResult=$conn->query($query);
+    $resultARRAY=$districtResult->fetch_assoc();
+    $districtName=$resultARRAY['Name'];
+    $sqlQuery="SELECT * FROM reviews where district='".$districtName."'";
 }
 function getAttributeResults()
 {
     global $conn,$sqlQuery;
-    $sqlQuery="SELECT * FROM reviews where attribute='".$_SESSION['attributeValue']."'";    
+    $sqlQuery="SELECT * FROM reviews where attribute='".$_SESSION['attributeValue']."'";
 }
 function getGoodResults()
 {
@@ -37,7 +39,7 @@ function getGoodResults()
 function getBadResults()
 {
     global $conn,$sqlQuery;
-    $sqlQuery="SELECT * FROM reviews where goodOrBad='1'";    
+    $sqlQuery="SELECT * FROM reviews where goodOrBad='1'";
 }
 switch($_SESSION['customizedValue'])
 {

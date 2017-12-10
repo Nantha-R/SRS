@@ -1,0 +1,3 @@
+insertLocation.java
+
+used for collecting information regarding the lat and lon of states in TamilNadu
