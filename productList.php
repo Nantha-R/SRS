@@ -66,6 +66,7 @@
                         <li><a href="./productList.php?collegeName=alreadyGot&customizedValue=3&attribute=Transport">Using attribute-Transport</a></li>
                         <li><a href="./productList.php?collegeName=alreadyGot&customizedValue=4&attribute=none">Using Good reviews</a></li>
                         <li><a href="./productList.php?collegeName=alreadyGot&customizedValue=5&attribute=none">Using Bad reviews</a></li>
+                        <li><a href="./aggregatedOutput.php">Using aggregated output computation</a></li>
                     </ul>
                 </span>
             </h1>

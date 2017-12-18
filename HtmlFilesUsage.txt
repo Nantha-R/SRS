@@ -13,3 +13,9 @@ productList
 list down all the reviews of the selected product
 angularjs application enabled connect with myApp.js to include angularjs functionality
 connects with db.php for location,attribute,nlp and fbfriends reviews collection
+
+aggregatedOutput
+
+same as productList
+connects with db.php using angular to update and fetch aggregatedOutput reviews
+connects with myOutputApp.js file

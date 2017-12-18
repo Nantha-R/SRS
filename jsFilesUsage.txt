@@ -9,4 +9,9 @@ connects to db.php file and gets values from the db
 links these values onto productList.php
 connects to addReview.php to enter the review onto  the database
 used to interact with the nlp api
-use ng-show to show/hide details of review submit status 
+use ng-show to show/hide details of review submit status
+
+myOutputApp.js
+
+connects with dp.php and gets sorted records from the tables
+same as myApp.js except it shows measure value onto html page aggregatedOutput.php

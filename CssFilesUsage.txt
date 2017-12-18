@@ -6,6 +6,10 @@ productPageCss.css
 
 provides css designs to productPage.html page
 
-productListCss.cc
+productListCss.css
 
 provides css designs to productListCss.php page
+
+aggregatedOutputCSS.css
+
+provides css designs to aggregatedOutput.php

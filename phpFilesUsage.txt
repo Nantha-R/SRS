@@ -3,6 +3,9 @@ db.php
 contains different functions for carrying out specific tasks
 get values from database
 invoked by js.js file
+invoked by myOutputApp.js file
+has seperate modules for all intensive calculations
+calculates and stores measureValue of each record in the table
 
 addReview.php
 
