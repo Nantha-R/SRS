@@ -82,7 +82,7 @@
                         <hr>
                         <div class ="row">
                             <div class="col-lg-2" style="font-weight:bold">{{x.fbid}} : </div>
-                            <div class="col-lg-10" style="font-style:italic"> {{x.reviews}} {{x.collegeName}}</div>
+                            <div class="col-lg-10" style="font-style:italic">  {{x.collegeName}}-{{x.reviews}}</div>
                         </div>
                     </div>
                 </div>
