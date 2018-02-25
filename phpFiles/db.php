@@ -5,6 +5,10 @@ $conn = new mysqli("localhost", "root", "", "srs");
 $sqlQuery="";
 //session start
 session_start();
+
+
+
+
 function getResults()
 {
     global $conn,$sqlQuery;
@@ -13,7 +17,7 @@ function getResults()
 function getFBResults()
 {
     global $conn,$sqlQuery;
-    $sqlQuery="SELECT * FROM reviews where fbid IN (\"".implode("\",\"",$_SESSION['allFriends'])."\")";
+    $sqlQuery="SELECT * FROM reviews where fbid IN (\"".implode("\",\"",$_SESSION['allFriends'])."\") AND collegeName='".$_SESSION['collegeName']."'";
 }
 function getLocationResults()
 {
@@ -24,22 +28,22 @@ function getLocationResults()
     $districtResult=$conn->query($query);
     $resultARRAY=$districtResult->fetch_assoc();
     $districtName=$resultARRAY['Name'];
-    $sqlQuery="SELECT * FROM reviews where district='".$districtName."'";
+    $sqlQuery="SELECT * FROM reviews where district='".$districtName."' AND collegeName='".$_SESSION['collegeName']."'";
 }
 function getAttributeResults()
 {
     global $conn,$sqlQuery;
-    $sqlQuery="SELECT * FROM reviews where attribute='".$_SESSION['attributeValue']."'";
+    $sqlQuery="SELECT * FROM reviews where attribute='".$_SESSION['attributeValue']."' AND collegeName='".$_SESSION['collegeName']."'";
 }
 function getGoodResults()
 {
     global $conn,$sqlQuery;
-    $sqlQuery="SELECT * FROM reviews where goodOrBad='0'";
+    $sqlQuery="SELECT * FROM reviews where goodOrBad='0' AND collegeName='".$_SESSION['collegeName']."'";
 }
 function getBadResults()
 {
     global $conn,$sqlQuery;
-    $sqlQuery="SELECT * FROM reviews where goodOrBad='1'";
+    $sqlQuery="SELECT * FROM reviews where goodOrBad='1' AND collegeName='".$_SESSION['collegeName']."'";
 }
 function getAggregatedResults()
 {
@@ -47,7 +51,11 @@ function getAggregatedResults()
     $tableName=$_SESSION['userData'];
     //create temporary table
     $tableName=str_replace(' ','',$tableName);
-    $sqlCreateTable="create table ".$tableName." AS SELECT id,fbid,collegeName,reviews,latitude,longitude,attribute,factor,goodOrBad,district from reviews";
+    //drop table if exist
+    $sqlDropTable="drop table if exists ".$tableName;
+    $conn->query($sqlDropTable);
+
+    $sqlCreateTable="create table ".$tableName." AS SELECT id,fbid,collegeName,reviews,latitude,longitude,attribute,factor,goodOrBad,district from reviews where collegeName='".$_SESSION['collegeName']."'";
     $conn->query($sqlCreateTable);
     //add a column to the table created
     $sqlAddColumn="alter table ".$tableName." add measure int(11)";
@@ -91,7 +99,7 @@ function getAggregatedResults()
       $sqlMeasureUpdate="update ".$tableName." set measure=".$measure." where id=".$row['id'];
       $conn->query($sqlMeasureUpdate);
     }
-    $sqlQuery="SELECT * from ".$tableName." ORDER BY measure DESC";
+    $sqlQuery="SELECT * from ".$tableName." where collegeName='".$_SESSION['collegeName']."' ORDER BY measure DESC";
 }
 switch($_SESSION['customizedValue'])
 {

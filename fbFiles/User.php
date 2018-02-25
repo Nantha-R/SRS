@@ -29,7 +29,7 @@ class User {
               $deleteresult=$this->db->query($deletequery);
 
                 // Update user data if already exists
-                $query = "UPDATE ".$this->userTbl." SET first_name = '".$userData['first_name']."', last_name = '".$userData['last_name']."', email = '".$userData['email']."', gender = '".$userData['gender']."', locale = '".$userData['locale']."', picture = '".$userData['picture']."', link = '".$userData['link']."', modified = '".date("Y-m-d H:i:s")."' WHERE oauth_provider = '".$userData['oauth_provider']."' AND oauth_uid = '".$userData['oauth_uid']."'";
+                $query = "UPDATE ".$this->userTbl." SET first_name = '".$userData['first_name']."', last_name = '".$userData['last_name']."', email = '".$userData['email']."', gender = '".$userData['gender']."', locale = '".$userData['locale']."', modified = '".date("Y-m-d H:i:s")."' WHERE oauth_provider = '".$userData['oauth_provider']."' AND oauth_uid = '".$userData['oauth_uid']."'";
                 $update = $this->db->query($query);
             }else{
                 //get user latitude and longitude
@@ -40,7 +40,7 @@ class User {
                 $deletequery="delete from templocation";
                 $deleteresult=$this->db->query($deletequery);
                 // Insert user data
-                $query = "INSERT INTO ".$this->userTbl." SET oauth_uid = '".$userData['oauth_uid']."', first_name = '".$userData['first_name']."', last_name = '".$userData['last_name']."', email = '".$userData['email']."', gender = '".$userData['gender']."', locale = '".$userData['locale']."', picture = '".$userData['picture']."', link = '".$userData['link']."', latitude='".$record['latitude']."',longitude='".$record['longitude']."'";
+                $query = "INSERT INTO ".$this->userTbl." SET oauth_uid = '".$userData['oauth_uid']."', first_name = '".$userData['first_name']."', last_name = '".$userData['last_name']."', email = '".$userData['email']."', gender = '".$userData['gender']."', locale = '".$userData['locale']."'', latitude='".$record['latitude']."',longitude='".$record['longitude']."'";
                 $insert = $this->db->query($query);
             }
 

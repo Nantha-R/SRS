@@ -1,0 +1,3 @@
+gettSentimentValue.py
+
+Used for interacting with the nltk library and derive sentiment results

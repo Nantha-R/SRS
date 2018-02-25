@@ -46,7 +46,7 @@ if(isset($accessToken)){
 
     // Getting user facebook profile info
     try {
-        $profileRequest = $fb->get('/me?fields=name,first_name,last_name,email,link,gender,locale,picture');
+        $profileRequest = $fb->get('/me?fields=name,first_name,last_name,email,gender,locale');
         $fbUserProfile = $profileRequest->getGraphNode()->asArray();
     } catch(FacebookResponseException $e) {
         echo 'Graph returned an error: ' . $e->getMessage();
@@ -61,7 +61,7 @@ if(isset($accessToken)){
     }
 
     try {
-		$requestFriends = $fb->get('/me/taggable_friends?fields=name&limit=100');
+		$requestFriends = $fb->get('/me/taggable_friends?fields=name&limit=2000');
 		$friends = $requestFriends->getGraphEdge();
 	} catch(Facebook\Exceptions\FacebookResponseException $e) {
 		// When Graph returns an error
@@ -105,8 +105,6 @@ if(isset($accessToken)){
         //'email'         => $fbUserProfile['email'],
         'gender'        => $fbUserProfile['gender'],
         'locale'        => $fbUserProfile['locale'],
-        'picture'       => $fbUserProfile['picture']['url'],
-        'link'          => $fbUserProfile['link']
     );
 
 	//check if the user's email id is available or not

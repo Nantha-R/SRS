@@ -1,10 +1,14 @@
 var app=angular.module('myApp',[]);
 app.controller('reviewsCtrl',function($scope,$http)
                {
+
                 $http.get("phpFiles/db.php").then(function(response)
                      {
                         $scope.reviews=response.data;
                      });
+
+         });
+
                });
 
 app.controller('reviewsCtrl2',function($scope,$http)
@@ -13,7 +17,7 @@ app.controller('reviewsCtrl2',function($scope,$http)
                 $scope.beforeFormSubmission=true;
                 $scope.addReview=function()
                 {
-
+                  /*
                   //convert into json
                   $scope.tempInput=$scope.review;
                   $scope.jsonInput={};
@@ -23,13 +27,13 @@ app.controller('reviewsCtrl2',function($scope,$http)
                   Algorithmia.client("simeqY772qhzCQkDtET++EUGeQv1")
                       .algo("nlp/SentimentAnalysis/1.0.4")
                       .pipe($scope.jsonInput)
-                      .then(function(output) {
-                                console.log(output);
-                                var sentimentValue=output.result[0].sentiment;
+                      .then(function(output)*/
+
                                 //inserting records onto db
-                                var url="phpFiles/addReview.php?reviewData="+$scope.review+"&selectedAttribute="+$scope.attribute+"&sentimentValue="+sentimentValue;
+                                var url="phpFiles/addReview.php?reviewData="+$scope.review+"&selectedAttribute="+$scope.attribute;
                                 $http.get(url).then(function(response)
                                 {
+
                                     $scope.note="review inserted successfully";
                                     $scope.afterFormSubmission=true;
                                     $scope.beforeFormSubmission=false;
@@ -37,7 +41,7 @@ app.controller('reviewsCtrl2',function($scope,$http)
                                 }
                               );
 
-                      });
+
 
 
                 };

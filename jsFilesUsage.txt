@@ -8,7 +8,7 @@ myApp.js
 connects to db.php file and gets values from the db
 links these values onto productList.php
 connects to addReview.php to enter the review onto  the database
-used to interact with the nlp api
+used to interact with the python nltk library
 use ng-show to show/hide details of review submit status
 
 myOutputApp.js

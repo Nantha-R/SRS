@@ -10,3 +10,7 @@ calculates and stores measureValue of each record in the table
 addReview.php
 
 used for inserting the review into the database
+
+updateDb.php
+
+Used just in case if needed and this time it has no use 
