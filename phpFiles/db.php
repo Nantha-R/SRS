@@ -5,10 +5,6 @@ $conn = new mysqli("localhost", "root", "", "srs");
 $sqlQuery="";
 //session start
 session_start();
-
-
-
-
 function getResults()
 {
     global $conn,$sqlQuery;
@@ -49,25 +45,29 @@ function getAggregatedResults()
 {
     global $conn,$sqlQuery;
     $tableName=$_SESSION['userData'];
-    //create temporary table
     $tableName=str_replace(' ','',$tableName);
-    //drop table if exist
-    $sqlDropTable="drop table if exists ".$tableName;
-    $conn->query($sqlDropTable);
+    //delete previously created temporary table
+    $sqlDroppTable="drop table if exists ".$tableName." ";
+    $conn->query($sqlDroppTable);
 
-    $sqlCreateTable="create table ".$tableName." AS SELECT id,fbid,collegeName,reviews,latitude,longitude,attribute,factor,goodOrBad,district from reviews where collegeName='".$_SESSION['collegeName']."'";
-    $conn->query($sqlCreateTable);
-    //add a column to the table created
-    $sqlAddColumn="alter table ".$tableName." add measure int(11)";
-    $conn->query($sqlAddColumn);
-    //echo "<script>console.log($sqlAddColumn);</script>";
-    //fetch records from mysql table
-    $sqlFetchRecords="select * from ".$tableName;
+    $sqlFetchRecords="select * from reviews where collegeName='".$_SESSION['collegeName']."'";
     $resultsOfRecords=$conn->query($sqlFetchRecords);
     //loopthrough each record
+    //create temp table
+    $sqlCreateTable2="create table ".$tableName." (id int(11),fbid varchar(50),reviews text,measure int(11))";
+    $conn->query($sqlCreateTable2);
+
+
+    $combinedInsert="INSERT INTO ".$tableName." VALUES";
+
     while($row=$resultsOfRecords->fetch_assoc())
     {
+
+
       //SentimentAnalysis
+      $row1=$row['fbid'];
+      $row2=$row['reviews'];
+
       $measure=0;
       $measure+=abs(round($row["factor"]*10));
       //friends
@@ -95,11 +95,14 @@ function getAggregatedResults()
       //location
       if((round($_SESSION['latitude'])==round($row['latitude']))&&(round($_SESSION['longitude'])==round($row['longitude'])))
       $measure+=3;
-      //insert measure value onto db
-      $sqlMeasureUpdate="update ".$tableName." set measure=".$measure." where id=".$row['id'];
-      $conn->query($sqlMeasureUpdate);
+      //updating the query for batch updates
+      $combinedInsert=$combinedInsert."('".$row['id']."','".$row1."','".$row2."',".$measure."),";
+
     }
-    $sqlQuery="SELECT * from ".$tableName." where collegeName='".$_SESSION['collegeName']."' ORDER BY measure DESC";
+    //batch update $query
+    $combinedInsert=rtrim($combinedInsert,',');
+    $conn->query($combinedInsert);
+    $sqlQuery="SELECT fbid,reviews,measure from ".$tableName."  ORDER BY measure DESC";
 }
 switch($_SESSION['customizedValue'])
 {
