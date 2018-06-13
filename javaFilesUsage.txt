@@ -1,7 +1,0 @@
-insertLocation.java
-
-used for collecting information regarding the lat and lon of states in TamilNadu
-
-insertReviews.java
-
-used for collecting reviews from all users
